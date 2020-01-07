@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+
+
+import numpy as np
+import pandas as pd
+# import seaborn as sns
+import folium
+import webbrowser
+from folium.plugins import HeatMap
+# posi=pd.read_csv("D:\\Files\\datasets\\CitiesLatLon_China.csv")
+
+posi=pd.read_excel("24_population.xlsx")
+
+num = 1300
+
+lat = np.array(posi["lat"][0:num])                        # 获取维度之维度值
+lon = np.array(posi["lon"][0:num])                        # 获取经度值
+cu=np.array(posi["cu_num"][0:num])
+total=np.array(posi["total_num"][0:num])
+aver=np.array(posi["average_num"][0:num])
+
+# lat = np.array(posi["lat"][0:num])                        # 获取维度之维度值
+# lon = np.array(posi["lon"][0:num])                        # 获取经度值
+# pop = np.array(posi["pop"][0:num],dtype=float)    # 获取人口数，转化为numpy浮点型
+# gdp = np.array(posi["GDP"][0:num],dtype=float)    # 获取人口数，转化为numpy浮点型
+
+data1 = [[lat[i],lon[i],total[i]/220000] for i in range(num)]    #将数据制作成[lats,lons,weights]的形式
+data2 = [[lat[i],lon[i],cu[i]/100000] for i in range(num)]
+map_osm = folium.Map(location=[35,110],zoom_start=5)    #绘制Map，开始缩放程度是5倍
+HeatMap(data1, radius=110, max_zoom=8,min_opacity=-1).add_to(map_osm)  # 将热力图添加到前面建立的map里
+
+map_osm_min=folium.Map(location=[35,110],zoom_start=5,tiles="Stamen Terrain")
+HeatMap(data2, radius=110, max_zoom=8,min_opacity=-1).add_to(map_osm_min)  # 将热力图添加到前面建立的map里
+file_path = r"D:\workspace\PythonOutput\人口.html"
+file_path2 = r"D:\workspace\PythonOutput\人口_cu.html"
+map_osm.save(file_path)     # 保存为html文件
+map_osm_min.save(file_path2)
+webbrowser.open(file_path)  # 默认浏览器打开
+webbrowser.open(file_path2)  # 默认浏览器打开

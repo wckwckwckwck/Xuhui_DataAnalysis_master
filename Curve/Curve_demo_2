@@ -1,0 +1,84 @@
+# -*- coding: utf-8 -*-
+
+
+import numpy as np
+import pandas as pd
+# import seaborn as sns
+import matplotlib.pyplot as plt
+import folium
+import webbrowser
+from folium.plugins import HeatMap
+# posi=pd.read_csv("D:\\Files\\datasets\\CitiesLatLon_China.csv")
+
+posi=pd.read_excel("上海体育馆进出站客流_201905.xlsx")
+sheet1=pd.read_excel("上海体育馆进出站客流_201905.xlsx",sheet_name='一号线',skiprows = [0,1])
+num = 23
+print("获取到所有的值:\n{0}".format(sheet1))#格式化输出
+# lat = np.array(posi["lat"][0:num])                        # 获取维度之维度值
+# lon = np.array(posi["lon"][0:num])                        # 获取经度值
+# cu=np.array(posi["cu_num"][0:num])
+# total=np.array(posi["total_num"][0:num])
+# aver=np.array(posi["average_num"][0:num])
+
+
+data1=sheet1.ix[21].values
+data2=[]
+data_test=[1,2,3,4,5,6,7,8,9,10]
+print("获取到所有的值:\n{0}".format(data1))#格式化输出
+i=2
+max=63
+for i in range(31):
+   # data2[i]=data1[2*i+1]
+   print(data1[i],i)
+
+#
+for j in range(31):
+   data2[j]=2*j+1
+
+plt.plot(data2)
+
+
+
+
+#多色柱状图
+data = np.array([[1,2,3,1,2],[3,4,5,3,4],[2,3,4,2,3],[4,5,6,3,4]])
+rows = ['x','y','z','w']
+cols = ['a','b','c','d','e']
+df = pd.DataFrame(data,index = rows,columns=cols)
+df.plot(kind='bar',stacked=True,colormap='Blues_r')
+plt.xticks([])  #去掉x轴的刻度标签，避免与下方的表格的列标签重合
+plt.table(cellText=data.T,cellLoc='center',cellColours=None,rowLabels=cols,rowLoc='center',\
+rowColours=plt.cm.BuPu(np.linspace(0,0.5,5))[::-1],colLabels=rows,colLoc='center',colColours=None,loc='bottom')
+
+
+#单色柱状图
+fig,axes = plt.subplots(2,2,figsize=(10,6))
+s = pd.Series(np.random.randint(0,10,15),index = list('abcdefghijklmno'))
+df = pd.DataFrame(np.random.rand(10,3),columns = ['A','B','C'])
+s.plot(kind = 'bar',ax = axes[0,0]) #kind表示图表类型
+df.plot(kind = 'bar',ax = axes[0,1])
+df.plot.bar(ax = axes[1,0],stacked = True)   #stacked = True表示显示为堆叠样式
+df.plot.barh(ax = axes[1,1])  #横向的柱状图
+
+
+
+
+#
+fig,axes = plt.subplots(1,2,figsize=(10,6))
+df1 = pd.DataFrame(np.random.rand(10,3),columns=['A','B','C'])
+df2 = pd.DataFrame(np.random.randn(10,3),columns=['a','b','c'])
+df1.plot.area(colormap='summer',ax = axes[0])
+df2.plot(kind='area',stacked = False,ax = axes[1])
+
+
+fig,axes = plt.subplots(1,2,figsize=(10,5))
+s = pd.Series(np.random.randn(1000))
+s.hist(bins=20,histtype='bar',align='right',orientation='vertical',alpha=0.8,density=False,grid=True,ax=axes[0])#四种方式
+# s.plot(kind='hist')
+# s.plot.hist()
+# plt.hist(s,bins=30)
+s.hist(bins=20,alpha=0.8,density=True,ax=axes[1]) #直方图形式的密度图
+# s.plot(kind='kde',ax=axes[1] )#密度图
+
+
+plt.show()

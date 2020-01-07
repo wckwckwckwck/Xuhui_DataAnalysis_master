@@ -1,0 +1,21 @@
+# coding:utf-8
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import numpy as np
+from matplotlib.font_manager import FontProperties
+import matplotlib as mpl
+
+mpl.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.sans-serif'] = 'NSimSun,Times New Roman'
+
+x, y = np.loadtxt('难度30.txt', delimiter=',', unpack=True)
+plt.plot(x, y, label='难度值为30', color='black')
+plt.plot(x, y, 'o', color='black')
+
+plt.xlabel('XXXX')
+plt.ylabel('XXXX')
+
+
+plt.title(u'XXXXXX')
+plt.legend()
+plt.show()
