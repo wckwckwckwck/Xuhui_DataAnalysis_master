@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bb457d5-8e63-45d3-b0cd-cbde01d40f91" name="Default Changelist" comment="" />
+    <list default="true" id="9bb457d5-8e63-45d3-b0cd-cbde01d40f91" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/2014_us_cities.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/2015Cities-CHINA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/24_population.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/上海体育馆进出站客流_201905.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/上海体育馆进出站客流_201906.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/宜山路进出站客流_201905.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/宜山路进出站客流_201906.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/徐家汇进出站客流_201905.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xls_worksheet/徐家汇进出站客流_201906.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2014_us_cities.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2015Cities-CHINA.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/24_population.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/write.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/上海体育馆进出站客流_201905.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/上海体育馆进出站客流_201906.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/宜山路进出站客流_201905.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/宜山路进出站客流_201906.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/建筑1_wps图片.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/徐家汇进出站客流_201905.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/徐家汇进出站客流_201906.xlsx" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +40,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QQFuUT2vd7kZYrT9bhwu3KSQRK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -31,7 +54,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -201,7 +224,7 @@
       <workItem from="1570543057346" duration="10000" />
       <workItem from="1574303995013" duration="87000" />
       <workItem from="1574304131199" duration="67000" />
-      <workItem from="1578364362007" duration="355000" />
+      <workItem from="1578364362007" duration="1649000" />
     </task>
     <servers />
   </component>
@@ -218,6 +241,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
