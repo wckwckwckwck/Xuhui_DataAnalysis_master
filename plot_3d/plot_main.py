@@ -7,7 +7,7 @@ import numpy as np
 import math
 import random
 from PIL import Image
-
+from plot_3d.RGB_to_HSL import *
 address_1 = "D:\\workspace\\PythonOutput\\RGB_output\\对比图\\7.jpg"
 cnt = 0
 
@@ -127,7 +127,34 @@ def draw_3d_fromfile(infile):
         xd.append(node[0])
         yd.append(node[1])
         zd.append(node[2])
+    print(xd)
+    print(yd)
+    print(zd)
     img_re = drwa_3d(xd, yd, zd)
+    return img_re
+
+def draw_3d_ESL_fromfile(infile):
+    filename = infile
+    im = Image.open(filename).resize((70, 70))
+    img = im.load()
+    im.close()
+    X = []
+    height = im.size[0]
+    width = im.size[1]
+    for i in range(0, height):
+        for j in range(0, width):
+            X.append(np.array(img[i, j]))
+    xd = []
+    yd = []
+    zd = []
+    for node in X:
+        xd.append(node[0])
+        yd.append(node[1])
+        zd.append(node[2]) #输入RGB元祖
+    print(xd)
+    print(yd)
+    print(zd)
+    img_re = draw_3d_HSV(xd, yd, zd)
     return img_re
 
 
@@ -167,19 +194,66 @@ def drwa_3d(x, y, z):
         co = RGB_to_HEX(x[i], y[i], z[i])
         if(len(co)<7):
             continue
+            #
         co = co.upper()
         ax1.scatter3D(x[i], y[i], z[i], c=co)
     # 绘制散点图
     # ax1.plot3D(x, y, z, 'pink')  # 绘制空间曲线
-
     plt.show()
-    plt.angle_spectrum
+    # plt.angle_spectrum
     return ax1
 
 
-if __name__ == '__main__':
+def draw_3d_HSV(x, y, z):
+    fig = plt.figure()
+    ax1 = plt.axes(projection='3d')
+    # ax = fig.add_subplot(111,projection='3d')  #这种方法也可以画多个子图
+    # 定义图像和三维格式坐标轴
+    # fig = plt.figure()
+    # ax2 = Axes3D(fig)
+    # z = np.linspace(0, 13, 1000)
+    # x = 5 * np.sin(z)
+    # y = 5 * np.cos(z)
+    # zd = 13 * np.random.random(100)
+    # xd = 5 * np.sin(zd)
+    # yd = 5 * np.cos(zd)
 
-    img_1 = draw_3d_fromfile('12.jpg')
+    # ax1.scatter3D(x, y, z ,cmap='Black',edgecolors='#000000')
+    for i in range(len(x)):
+        x[i] = int(x[i])
+        y[i] = int(y[i])
+        z[i] = int(z[i])
+        co = RGB_to_HEX(x[i], y[i], z[i])
+        if(len(co)<7):
+            continue
+            #
+        co = co.upper()
+        (x[i],y[i],z[i])=rgb2hsv(x[i],y[i],z[i])
+        (x[i], y[i], z[i])=hsv_to_loc(x[i],y[i],z[i])
+        print(str(i/len(x)*100)+'%')
+        if i>5000: break
+        ax1.scatter3D(x[i], y[i], z[i], c=co)
+    plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
+    ax1.set_xlabel('H为色向（转角）', color='r')
+    ax1.set_ylabel('S为保护度', color='g')
+    ax1.set_zlabel('V为明度', color='b')  # 给三个坐标轴注明
+    # ax1.plot_surface(x, y, z, rstride=1, cstride=1, cmap=plt.cm.coolwarm, alpha=0.5)
+    # 绘制散点图
+    # ax1.plot3D(x, y, z, 'pink')  # 绘制空间曲线
+    plt.savefig(locs)
+    plt.show()
+
+    # plt.angle_spectrum
+    return ax1
+
+if __name__ == '__main__':
+    #1-12分别为聚色1-12个中心的结果
+    # img_1 = draw_3d_fromfile('2.jpg')
+    for i3 in range(5,8):
+        loc=str(i3)+".jpg"
+        locs=str(i3)+"ss.jpg"
+        img_2 =draw_3d_ESL_fromfile(loc)
+
 
 
     # img_1.save("D:\\workspace\\PythonOutput\\3D_RGBlayout\\1.jpg")
