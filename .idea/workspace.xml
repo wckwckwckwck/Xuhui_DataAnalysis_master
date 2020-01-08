@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bb457d5-8e63-45d3-b0cd-cbde01d40f91" name="Default Changelist" comment="">
+    <list default="true" id="9bb457d5-8e63-45d3-b0cd-cbde01d40f91" name="Default Changelist" comment=" change readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -231,8 +231,18 @@
       <workItem from="1578378917272" duration="2791000" />
       <workItem from="1578381723491" duration="4301000" />
       <workItem from="1578391314713" duration="642000" />
-      <workItem from="1578483567637" duration="1157000" />
+      <workItem from="1578483567637" duration="1244000" />
+      <workItem from="1578484832292" duration="308000" />
+      <workItem from="1578485211663" duration="3059000" />
     </task>
+    <task id="LOCAL-00001" summary=" change readme">
+      <created>1578484756101</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578484756102</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +265,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value=" change readme" />
+    <option name="LAST_COMMIT_MESSAGE" value=" change readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
